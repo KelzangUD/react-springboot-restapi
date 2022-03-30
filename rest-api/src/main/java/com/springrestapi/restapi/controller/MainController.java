@@ -27,6 +27,11 @@ public class MainController {
         return mainService.getEmployees();
     }
 
+    @RequestMapping(value="/employees/{empId}", method=RequestMethod.GET)
+    public MainEntity readEmployee(@PathVariable(value = "empId") Long id) {
+        return mainService.getEmployee(id);
+    }
+
     @RequestMapping(value="/employees/{empId}", method=RequestMethod.PUT)
     public MainEntity readEmployees(@PathVariable(value = "empId") Long id, @RequestBody MainEntity empDetails) {
         return mainService.updateEmployee(id, empDetails);

@@ -23,6 +23,9 @@ public class MainService {
     public List<MainEntity> getEmployees() {
         return mainDao.findAll();
     }
+    public MainEntity getEmployee(Long id) {
+        return mainDao.findById(id).get();
+    }
 
     // DELETE
     public void deleteEmployee(Long empId) {
